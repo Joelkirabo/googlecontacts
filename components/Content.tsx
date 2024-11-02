@@ -16,7 +16,7 @@ export default async function Content(){
                 <td className="text-gray-500 font-bold text-sm p-2">Name</td>
                 <td className="text-gray-500 font-bold text-sm p-2">Email</td>
                 <td className="text-gray-500 font-bold text-sm p-2">Pnone</td>
-                <td className="text-gray-500 font-bold text-sm p-2">Job title</td>
+                <td className="text-gray-500 font-bold text-sm p-2">Job</td>
               </tr>
             </thead>
             <tbody>
