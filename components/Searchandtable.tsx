@@ -6,9 +6,7 @@ import { useState } from "react"
 
 export default function Searchandtable({contacts}:{contacts:ContactProps[]}){
 
-    const [persons,setPersons] = useState(contacts)  
-
- 
+    const [persons,setPersons] = useState(contacts)   
 
     function handlesearch(value:string){
         if(value===""){
@@ -23,8 +21,6 @@ export default function Searchandtable({contacts}:{contacts:ContactProps[]}){
         }                          
 
         }
-
-
 
     return(
         <div className="col-span-12 md:col-span-9 flex flex-col gap-5">
