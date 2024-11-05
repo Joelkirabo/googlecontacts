@@ -1,15 +1,15 @@
 "use server"
 import { ContactProps } from "@/types/types";
-import { prismaClient } from "@/lib/db";
+import {db } from "@/lib/db";
 
 
 export default async function getContacts(){
-    const contacts = await prismaClient.contacts.findMany() || [];
+    const contacts = await db.contacts.findMany() || [];
 return contacts;}
 
 export async function saveContacts(data:ContactProps){
   try {
-    const newcontact = await prismaClient.contacts.create({
+    const newcontact = await db.contacts.create({
       data
     })
     console.log( ` ${newcontact} has been added`)
