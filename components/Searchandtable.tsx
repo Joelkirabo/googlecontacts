@@ -48,7 +48,7 @@ export default function Searchandtable({contacts}:{contacts:ContactProps[]}){
                             <tr>
                               <td className="text-gray-500 font-bold text-sm p-2">Name</td>
                               <td className="text-gray-500 font-bold text-sm p-2">Email</td>
-                              <td className="text-gray-500 font-bold text-sm p-2">Pnone</td>
+                              <td className="text-gray-500 font-bold text-sm p-2">Phone</td>
                               <td className="text-gray-500 font-bold text-sm p-2">Job</td>
                             </tr>
                           </thead>
@@ -58,7 +58,7 @@ export default function Searchandtable({contacts}:{contacts:ContactProps[]}){
                                 persons.length?(
                                     persons.map((contact,i)=>{
                                         return(
-                                            <tr key={i}>
+                                            <tr className="text-gray-800" key={i}>
                                             <td className="p-2">{contact.name}</td>
                                             <td className="p-2"></td>
                                             <td className="p-2">{contact.phone}</td>
