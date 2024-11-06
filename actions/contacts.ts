@@ -2,6 +2,8 @@
 import { ContactProps } from "@/types/types";
 import {db } from "@/lib/db";
 
+export const revalidate = true;
+
 
 export default async function getContacts(){
     const contacts = await db.contacts.findMany();
