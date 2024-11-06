@@ -1,15 +1,12 @@
 "use client"
 import { ContactProps } from "@/types/types"
-import { revalidatePath } from "next/cache"
 import { useState } from "react"
 
 
 
 export default function Searchandtable({contacts}:{contacts:ContactProps[]}){
 
-    const [persons,setPersons] = useState(contacts)  
-    revalidatePath("/") 
-
+    const [persons,setPersons] = useState(contacts)   
 
     function handlesearch(value:string){
         if(value===""){
