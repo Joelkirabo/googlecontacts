@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 
 export default async function getContacts(){
     const contacts = await db.contacts.findMany();
-    ()=>revalidatePath('/')
+    revalidatePath('/')
     return contacts;
   }
 
