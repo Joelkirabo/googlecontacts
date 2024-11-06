@@ -30,9 +30,10 @@ export default function Createnewcontact(){
         setLoading(true)
         await saveContacts(data)
         setLoading(false)
-        reset()     
+        reset()    
+        revalidatePath("/") 
         router.push("/")
-        revalidatePath("/")
+        
     }
 
     return (
