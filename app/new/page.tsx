@@ -29,10 +29,11 @@ export default function Createnewcontact(){
         }
         setLoading(true)
         await saveContacts(data)
-        revalidatePath('/')
+        
         setLoading(false)
         reset()     
         router.push("/")
+        revalidatePath('/')
     }
 
     return (
