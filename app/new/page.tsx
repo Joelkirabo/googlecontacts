@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 import { useState } from "react";
+import { revalidatePath } from "next/cache";
 
 type FormValues={
     name:string;
@@ -31,6 +32,7 @@ export default function Createnewcontact(){
         setLoading(false)
         reset()     
         router.push("/")
+        revalidatePath("/")
     }
 
     return (
