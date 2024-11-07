@@ -1,6 +1,7 @@
 "use server"
 import { ContactProps } from "@/types/types";
 import {db } from "@/lib/db";
+import { revalidatePath } from "next/cache";
 
 
 export default async function getContacts(){
@@ -8,6 +9,7 @@ export default async function getContacts(){
     
     return contacts;
   }
+  revalidatePath('/')
 
 export async function saveContacts(data:ContactProps){
   try {
