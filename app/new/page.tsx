@@ -32,7 +32,7 @@ export default function Createnewcontact(){
         setValidate(true)
         setLoading(false)
         reset()    
-        setValidate(false) 
+       
         router.push("/")
     }
 
