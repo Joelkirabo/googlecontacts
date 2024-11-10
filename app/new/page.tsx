@@ -1,6 +1,7 @@
 "use client"
 
 import { saveContacts } from "@/actions/contacts";
+import  getContacts  from "@/actions/contacts";
 
 import { useRouter } from "next/navigation";
 
@@ -28,8 +29,10 @@ export default function Createnewcontact(){
             phone:values.phone
         }
         setLoading(true)
-        await saveContacts(data,validate)
+        await saveContacts(data)
         setValidate(true)
+        await getContacts(validate)        
+        
         setLoading(false)
         reset()    
        
