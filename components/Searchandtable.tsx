@@ -9,9 +9,9 @@ export default function Searchandtable({contacts}:{contacts:ContactProps[]}){
 
     const [persons,setPersons] = useState(contacts)   
 
-    useEffect(()=>{
-      revalidatePath('/')
-    },[persons])
+          useEffect(()=>{
+            revalidatePath('/')
+          },[contacts])
 
     function handlesearch(value:string){
         if(value===""){
