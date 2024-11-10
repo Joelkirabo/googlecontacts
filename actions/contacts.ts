@@ -6,19 +6,19 @@ import { revalidatePath } from "next/cache";
 
 export default async function getContacts(){
     const contacts = await db.contacts.findMany();   
+    if(contacts){
+      revalidatePath('/')
+    }
     
 
     return contacts;
   }
 
-export async function saveContacts(data:ContactProps,validate:boolean){
+export async function saveContacts(data:ContactProps){
   try {
      await db.contacts.create({
       data
     })
-    if(validate){
-      revalidatePath('/')
-    }
   } catch (error) {
     console.log(error)
   }
