@@ -1,15 +1,11 @@
 "use server"
 import { ContactProps } from "@/types/types";
 import {db } from "@/lib/db";
-import { revalidatePath } from "next/cache";
 
 
-export default async function getContacts(validate:boolean){
-    const contacts = await db.contacts.findMany();  
 
-    if(validate){
-      revalidatePath('/')
-    }   
+export default async function getContacts(){
+    const contacts = await db.contacts.findMany();    
 
     return contacts;
   }

@@ -1,13 +1,12 @@
 "use client"
 
 import { saveContacts } from "@/actions/contacts";
-import  getContacts  from "@/actions/contacts";
 
 import { useRouter } from "next/navigation";
 
 import { useForm } from "react-hook-form";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 type FormValues={
     name:string;
@@ -17,7 +16,7 @@ type FormValues={
 export default function Createnewcontact(){
 
     const [loading, setLoading] = useState(false)
-    const [validate, setValidate] = useState(false)
+    
 
     const router = useRouter()
 
@@ -29,9 +28,7 @@ export default function Createnewcontact(){
             phone:values.phone
         }
         setLoading(true)
-        await saveContacts(data)
-        setValidate(true)
-        await getContacts(validate)        
+        await saveContacts(data)            
         
         setLoading(false)
         reset()    
