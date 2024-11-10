@@ -16,6 +16,7 @@ type FormValues={
 export default function Createnewcontact(){
 
     const [loading, setLoading] = useState(false)
+    const [validate, setValidate] = useState(false)
 
     const router = useRouter()
 
@@ -27,9 +28,11 @@ export default function Createnewcontact(){
             phone:values.phone
         }
         setLoading(true)
-        await saveContacts(data)
+        await saveContacts(data,validate)
+        setValidate(true)
         setLoading(false)
-        reset()     
+        reset()    
+        setValidate(false) 
         router.push("/")
     }
 
